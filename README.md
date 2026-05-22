@@ -28,6 +28,4 @@ C/C++源程序中需要使用字库/图片/声音等二进制资源时, 最常�
 
 再一想, 其实用python实现起来更简洁一些. 以及, 没必要固定一行20个数据了, 限制一行的总长更方便些. 
 
-执行py convert_oct.py data_file > data.c, 即可把需要的资源文件data_file转换成八进制转义的data.c.
-
-在test.c里include data.c, 编译运行, 输出重定向到data_file2, 检查二者的crc32校验值, 完全相同, 实验成功.
+执行py bin2oct.py -c xxx.bin abc, 即可生成abc.h和abc.c, abc.c包含了上述八进制字符串和整数abc_size. abc.h则对二者作了导出.
